@@ -14,3 +14,33 @@ while True:
         break
     else:
         print("Bot: Sorry, I don't understand.")
+
+Practical 8: Simple Rule-Based Chatbot
+
+Aim: To develop a simple chatbot using Python.
+Logic: The chatbot takes a message from the user and checks it using IF-ELIF conditions. It displays a predefined response for a matching message.
+
+Algorithm
+1.	Start the program.
+2.	Ask the user to enter a message.
+3.	Convert the message to lowercase.
+4.	Check the message using IF-ELIF conditions.
+5.	Display the matching response.
+6.	If the message is bye, stop; otherwise repeat.
+
+Pseudocode
+START
+REPEAT
+    INPUT message
+    IF message is hello
+        PRINT greeting
+    ELSE IF message is how are you
+        PRINT status
+    ELSE IF message is bye
+        PRINT goodbye
+        STOP
+    ELSE
+        PRINT don't understand
+UNTIL bye
+STOP
+

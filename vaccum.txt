@@ -12,3 +12,30 @@ if B == "dirty":
 print("Room A:", A)
 print("Room B:", B)
 print("All rooms are clean")
+
+
+
+Practical 1: Simple Reflex Agent
+
+Aim: To implement a Simple Reflex Agent that cleans two rooms.
+Logic: The agent checks each room. If a room is dirty, it cleans it. The action depends on the current condition.
+
+Algorithm
+1.	Start.
+2.	Take the condition of Room A and Room B.
+3.	If Room A is dirty, clean it.
+4.	If Room B is dirty, clean it.
+5.	Display both room conditions.
+6.	Stop.
+
+Pseudocode
+START
+INPUT A, B
+IF A is Dirty
+    Clean A
+END IF
+IF B is Dirty
+    Clean B
+END IF
+DISPLAY A and B
+STOP

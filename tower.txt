@@ -19,3 +19,32 @@ def tower_of_hanoi(n, source, auxiliary, destination):
 n = int(input("Enter number of disks: "))
 
 tower_of_hanoi(n, 'A', 'B', 'C')
+
+
+Practical 2: Tower of Hanoi (Recursion)
+
+Aim: To solve the Tower of Hanoi problem using recursion.
+Logic: Move disks from the source rod to the destination rod using an auxiliary rod. Move smaller disks first, then the largest disk.
+
+Algorithm
+1.	Start.
+2.	Define a recursive function hanoi(n, source, destination, auxiliary).
+3.	If n is 1, move the disk directly to destination.
+4.	Move n-1 disks from source to auxiliary.
+5.	Move the largest disk from source to destination.
+6.	Move n-1 disks from auxiliary to destination.
+7.	Stop.
+
+Pseudocode
+START
+FUNCTION HANOI(n, source, destination, auxiliary)
+    IF n == 1
+        PRINT source TO destination
+        RETURN
+    END IF
+    HANOI(n-1, source, auxiliary, destination)
+    PRINT source TO destination
+    HANOI(n-1, auxiliary, destination, source)
+END FUNCTION
+CALL HANOI(3, A, C, B)
+STOP

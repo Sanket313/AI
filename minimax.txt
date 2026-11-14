@@ -9,3 +9,27 @@ def minimax(d, i, maxplayer, values):
 
 values = [3, 5, 6, 9, 1, 2, 0, -1]
 print("Best Value:", minimax(0, 0, True, values))
+
+
+Practical 7: Minimax Algorithm
+
+Aim: To implement the Minimax algorithm for game playing.
+Logic: MAX tries to get the highest value and MIN tries to get the lowest value. The algorithm evaluates leaf values and returns the best value at each level.
+
+Algorithm
+1.	Create a game tree with leaf values.
+2.	If the current node is a leaf, return its value.
+3.	At a MAX node, return the maximum of the child values.
+4.	At a MIN node, return the minimum of the child values.
+5.	Continue until the root value is found.
+6.	Display the best value.
+
+Pseudocode
+FUNCTION MINIMAX(depth, index, player)
+    IF depth is maximum
+        RETURN leaf value
+    IF player is MAX
+        RETURN maximum of child results
+    ELSE
+        RETURN minimum of child results
+PRINT MINIMAX result

@@ -19,3 +19,29 @@ while q:
     for c in range(8):
         if safe(s, c):
             q.append(s + [c])
+
+Practical 5: 8-Queens Using BFS
+
+Aim: To solve the 8-Queens problem using Breadth First Search.
+Logic: BFS explores partial board arrangements level by level. It adds a queen in the next row only if the column and diagonals are safe.
+
+Algorithm
+1.	Create a queue containing the empty state.
+2.	Remove the first state from the queue.
+3.	If it contains 8 queens, print the solution and stop.
+4.	Try every column in the next row.
+5.	Add each safe new state to the queue.
+6.	Repeat until a solution is found.
+
+Pseudocode
+START
+CREATE queue and insert empty state
+WHILE queue is not empty
+    REMOVE first state
+    IF state has 8 queens
+        PRINT solution
+        STOP
+    FOR each column in next row
+        IF position is safe
+            ADD new state to queue
+STOP

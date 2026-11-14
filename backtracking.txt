@@ -20,3 +20,31 @@ def solve(row):
 
 solve(0)
 print("Solution:", board)
+
+
+Practical 6: 8-Queens Using Backtracking
+Aim: To solve the 8-Queens problem using Backtracking.
+Logic: Place one queen in each row. If a position is unsafe or a later row has no safe position, remove the previous queen and try another column.
+
+Algorithm
+1.	Start with an empty board.
+2.	Try a column in the current row.
+3.	Check whether the column and diagonals are safe.
+4.	Place a queen and solve the next row.
+5.	If the next row cannot be solved, remove the queen and try another column.
+6.	When all 8 rows are filled, print the solution.
+
+Pseudocode
+FUNCTION SOLVE(row)
+    IF row == 8
+        RETURN TRUE
+    FOR each column
+        IF position is safe
+            PLACE queen
+            IF SOLVE(row + 1)
+                RETURN TRUE
+            REMOVE queen
+    RETURN FALSE
+CALL SOLVE(0)
+PRINT solution
+

@@ -41,3 +41,34 @@ while q:
             heappush(q, (ng + h(t), ng, t))
 else:
     print("No solution found")
+
+Practical 3: A* Search for 8-Puzzle
+
+Aim: To solve the 8-Puzzle problem using A* search.
+
+Logic: A* selects a state using f(n) = g(n) + h(n). Here g is the number of moves so far and h is the number of misplaced numbered tiles.
+
+Algorithm
+1.	Set the initial state and goal state.
+2.	Insert the initial state into a priority queue.
+3.	Remove the state with the smallest f value.
+4.	If it is the goal, display it and stop.
+5.	Find the blank tile and generate legal moves.
+6.	For each new state, calculate g + h and insert it into the queue.
+7.	Repeat until the goal is found or the queue is empty.
+
+Pseudocode
+START
+SET start and goal
+INSERT start into priority queue with f = g + h
+WHILE queue is not empty
+    REMOVE state with lowest f
+    IF state equals goal
+        PRINT Goal Found
+        STOP
+    GENERATE legal next states
+    CALCULATE f = g + h for each state
+    INSERT new states
+END WHILE
+STOP
+

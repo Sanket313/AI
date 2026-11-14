@@ -1,0 +1,11 @@
+def minimax(d, i, maxplayer, values):
+    if d == 3:
+        return values[i]
+
+    if maxplayer:
+        return max(minimax(d+1, i*2+j, False, values) for j in range(2))
+    else:
+        return min(minimax(d+1, i*2+j, True, values) for j in range(2))
+
+values = [3, 5, 6, 9, 1, 2, 0, -1]
+print("Best Value:", minimax(0, 0, True, values))

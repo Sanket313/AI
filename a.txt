@@ -1,0 +1,43 @@
+from heapq import heappush, heappop
+
+start = (1, 2, 3, 4, 0, 5, 7, 8, 6)
+goal  = (1, 2, 3, 4, 5, 6, 7, 8, 0)
+
+def h(s):
+    return sum(s[i] != 0 and s[i] != goal[i] for i in range(9))
+
+q = [(h(start), 0, start)]
+best = {start: 0}
+
+while q:
+    f, g, s = heappop(q)
+
+    if s == goal:
+        print("Goal Reached:", s)
+        break
+
+    if g != best[s]:
+        continue
+
+    z = s.index(0)
+    moves = [-3, 3, -1, 1]
+
+    for d in moves:
+        n = z + d
+        if not (0 <= n < 9):
+            continue
+        if d == -1 and z % 3 == 0:
+            continue
+        if d == 1 and z % 3 == 2:
+            continue
+
+        t = list(s)
+        t[z], t[n] = t[n], t[z]
+        t = tuple(t)
+        ng = g + 1
+
+        if ng < best.get(t, 999):
+            best[t] = ng
+            heappush(q, (ng + h(t), ng, t))
+else:
+    print("No solution found")

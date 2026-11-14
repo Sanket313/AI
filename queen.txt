@@ -1,0 +1,21 @@
+from collections import deque
+
+q = deque([[]])
+
+def safe(s, c):
+    r = len(s)
+    for i in range(r):
+        if s[i] == c or abs(s[i] - c) == r - i:
+            return False
+    return True
+
+while q:
+    s = q.popleft()
+
+    if len(s) == 8:
+        print("Solution:", s)
+        break
+
+    for c in range(8):
+        if safe(s, c):
+            q.append(s + [c])

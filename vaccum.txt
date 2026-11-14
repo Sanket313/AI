@@ -1,0 +1,14 @@
+A = input("Enter condition of Room A: ").strip().lower()
+B = input("Enter condition of Room B: ").strip().lower()
+
+if A == "dirty":
+    print("Cleaning Room A")
+    A = "Clean"
+
+if B == "dirty":
+    print("Cleaning Room B")
+    B = "Clean"
+
+print("Room A:", A)
+print("Room B:", B)
+print("All rooms are clean")

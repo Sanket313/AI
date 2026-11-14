@@ -23,3 +23,34 @@ def alphabeta(d, i, maxplayer, values, alpha, beta):
 
 values = [3, 5, 6, 9, 1, 2, 0, -1]
 print("Best Value:", alphabeta(0, 0, True, values, -999, 999))
+
+
+Practical 4: Alpha-Beta Pruning
+
+Aim: To implement Alpha-Beta Pruning for a game tree.
+
+Logic: Alpha-Beta Pruning improves Minimax by skipping branches that cannot change the final decision. Alpha is the best value for MAX; beta is the best value for MIN.
+
+Algorithm
+1.	Start with alpha = -infinity and beta = +infinity.
+2.	If a leaf is reached, return its value.
+3.	At a MAX node, choose the largest child value and update alpha.
+4.	At a MIN node, choose the smallest child value and update beta.
+5.	If beta is less than or equal to alpha, stop exploring remaining children.
+6.	Return the best value.
+
+Pseudocode
+FUNCTION ALPHABETA(node, alpha, beta)
+    IF node is a leaf
+        RETURN its value
+    IF node is MAX
+        FOR each child
+            update best and alpha
+            IF beta <= alpha, BREAK
+        RETURN best
+    ELSE
+        FOR each child
+            update best and beta
+            IF beta <= alpha, BREAK
+        RETURN best
+

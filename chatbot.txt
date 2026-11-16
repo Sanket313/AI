@@ -1,20 +1,31 @@
+import re
+
+rules = [
+    (r"hello|hi|hey", "Hello! How can I help you?"),
+    (r"how are you", "I am fine!"),
+    (r"my name is (.+)", "Nice to meet you!"),
+    (r"your name", "I am a Python Chatbot."),
+    (r"happy|good", "That's great!"),
+    (r"sad|unhappy", "I am sorry to hear that.")
+]
+
 while True:
     msg = input("You: ").lower()
 
-    if msg == "hello":
-        print("Bot: Hello! How can I help you?")
-    elif msg == "how are you":
-        print("Bot: I am fine. Thank you!")
-    elif msg == "what is your name":
-        print("Bot: I am a Python Chatbot.")
-    elif msg == "who created you":
-        print("Bot: I was created using Python.")
-    elif msg == "bye":
+    if msg in ["bye", "exit", "quit"]:
         print("Bot: Goodbye!")
         break
-    else:
-        print("Bot: Sorry, I don't understand.")
 
+    found = False
+
+    for pattern, response in rules:
+        if re.search(pattern, msg):
+            print("Bot:", response)
+            found = True
+            break
+
+    if not found:
+        print("Bot: Tell me more.")
 Practical 8: Simple Rule-Based Chatbot
 
 Aim: To develop a simple chatbot using Python.

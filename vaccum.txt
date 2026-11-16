@@ -1,20 +1,28 @@
-A = input("Enter condition of Room A: ").strip().lower()
-B = input("Enter condition of Room B: ").strip().lower()
+A = input("Room A: ")
+B = input("Room B: ")
 
-if A == "dirty":
-    print("Cleaning Room A")
-    A = "Clean"
+location = "A"
 
-if B == "dirty":
-    print("Cleaning Room B")
-    B = "Clean"
+while True:
+    if location == "A":
+        if A == "Dirty":
+            print("Suck A")
+            A = "Clean"
+        else:
+            print("Move Right")
+            location = "B"
 
-print("Room A:", A)
-print("Room B:", B)
-print("All rooms are clean")
+    else:
+        if B == "Dirty":
+            print("Suck B")
+            B = "Clean"
+        else:
+            print("Move Left")
+            location = "A"
 
-
-
+    if A == "Clean" and B == "Clean":
+        print("Both rooms are clean")
+        break
 Practical 1: Simple Reflex Agent
 
 Aim: To implement a Simple Reflex Agent that cleans two rooms.
